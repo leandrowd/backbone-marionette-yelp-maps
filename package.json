@@ -1,0 +1,24 @@
+{
+  "name": "backbone-developer-test",
+  "version": "0.0.0",
+  "description": "Automatic Backbone Developer Test",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Kamil Ogórek",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.4.1"
+  },
+  "devDependencies": {
+    "browserify": "^4.1.8",
+    "connect-livereload": "^0.4.0",
+    "grunt": "^0.4.5",
+    "grunt-browserify": "^2.1.0",
+    "grunt-contrib-jshint": "^0.10.0",
+    "grunt-contrib-sass": "^0.7.3",
+    "grunt-contrib-watch": "^0.6.1",
+    "load-grunt-tasks": "^0.4.0"
+  }
+}
