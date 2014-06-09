@@ -115,6 +115,20 @@ module.exports = function (grunt) {
                     ]
                 }]
             }
+        },
+        karma: {
+            unit: {
+                configFile: 'karma.conf.js',
+                autoWatch: true
+            }
+        },
+        concurrent: {
+            dev: {
+                tasks: ['karma', 'watch'],
+                options: {
+                    logConcurrentOutput: true
+                }
+            }
         }
     });
 
@@ -122,7 +136,7 @@ module.exports = function (grunt) {
         'jshint',
         'sass:dev',
         'connect:dev',
-        'watch'
+        'concurrent:dev'
     ]);
 
     grunt.registerTask('server:dist', ['connect:dist']);
