@@ -20,5 +20,12 @@
     "undef": true,
     "unused": true,
     "node": true,
-    "browser": true
+    "browser": true,
+    "globals": {
+        "require": true,
+        "define": true,
+        "describe": true,
+        "expect": true,
+        "it": true
+    }
 }

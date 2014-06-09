@@ -4,7 +4,6 @@ var LIVERELOAD_PORT = 35730;
 var SERVER_PORT = 5000;
 
 module.exports = function (grunt) {
-    require('time-grunt')(grunt);
     require('load-grunt-tasks')(grunt);
 
     grunt.initConfig({
@@ -21,7 +20,7 @@ module.exports = function (grunt) {
                 tasks: ['sass:dev']
             },
             scripts: {
-                files: ['<%= paths.src %>/scripts/**/*.js'],
+                files: ['<%= paths.src %>/scripts/**/*.js', 'test/**/*.js'],
                 tasks: ['jshint']
             },
             templates: {
@@ -30,8 +29,7 @@ module.exports = function (grunt) {
         },
         connect: {
             options: {
-                port: SERVER_PORT,
-                open: true
+                port: SERVER_PORT
             },
             dev: {
                 options: {
@@ -54,7 +52,7 @@ module.exports = function (grunt) {
                 jshintrc: '.jshintrc',
                 reporter: require('jshint-stylish')
             },
-            files: ['public/scripts/**/*.js']
+            files: ['<%= paths.src %>/scripts/**/*.js', 'test/**/*.js']
         },
         requirejs: {
             dist: {
@@ -128,27 +126,23 @@ module.exports = function (grunt) {
                 options: {
                     logConcurrentOutput: true
                 }
+            },
+            assets: ['sass:dev', 'jshint'],
+            dist: {
+                tasks: [
+                    'clean:dist',
+                    'htmlmin:dist',
+                    'sass:dist',
+                    'jshint',
+                    'requirejs:dist',
+                    'copy:dist'
+                ]
             }
         }
     });
 
-    grunt.registerTask('server:dev', [
-        'jshint',
-        'sass:dev',
-        'connect:dev',
-        'concurrent:dev'
-    ]);
-
+    grunt.registerTask('server:dev', ['connect:dev', 'concurrent:assets', 'concurrent:dev']);
     grunt.registerTask('server:dist', ['connect:dist']);
-
-    grunt.registerTask('build', [
-        'clean:dist',
-        'htmlmin:dist',
-        'sass:dist',
-        'jshint',
-        'requirejs:dist',
-        'copy:dist'
-    ]);
-
+    grunt.registerTask('build', ['concurrent:dist']);
     grunt.registerTask('default', ['server:dev']);
 };

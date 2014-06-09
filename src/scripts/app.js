@@ -10,10 +10,10 @@ define(function (require) {
     var Backbone = require('backbone');
     var Marionette = require('marionette');
 
-    if (typeof _ != undefined) { console.log('Underscore is defined.');}
-    if (typeof $ != undefined) { console.log('jQuery is defined.');}
-    if (typeof Backbone != undefined) { console.log('Backbone is defined.');}
-    if (typeof Marionette != undefined) { console.log('Marionette is defined.');}
+    if (typeof _ !== undefined) { console.log('Underscore is defined.');}
+    if (typeof $ !== undefined) { console.log('jQuery is defined.');}
+    if (typeof Backbone !== undefined) { console.log('Backbone is defined.');}
+    if (typeof Marionette !== undefined) { console.log('Marionette is defined.');}
 
     var app = new Marionette.Application();
 
