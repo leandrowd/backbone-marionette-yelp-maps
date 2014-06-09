@@ -21,10 +21,7 @@ define(function (require) {
         console.log('App initialized!');
 
         this.router = require('router');
-
-        if (Backbone.history) {
-            Backbone.history.start();
-        }
+        Backbone.history.start();
     });
 
     return app;
