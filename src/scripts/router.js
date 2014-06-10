@@ -4,11 +4,9 @@
 
 'use strict';
 
-define(function (require) {
-    var Marionette = require('marionette');
-
+require(['marionette', 'router-controller'], function (Marionette, controller) {
     return new Marionette.AppRouter({
-        controller: require('router-controller'),
+        controller: controller,
         appRoutes: {
             '': 'defaultRoute',
             'foo': 'fooRoute',

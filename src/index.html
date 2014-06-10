@@ -10,8 +10,38 @@
         <link rel="stylesheet" href="styles/main.css">
     </head>
     <body>
-        <h1>Hello world!</h1>
+        <div class="wrapper">
+            <div class="sidebar">
+                <div class="searchBox">
 
-        <script data-main="scripts/main" src="requirejs/require.js"></script>
+                </div>
+                <div class="resultList">
+
+                </div>
+            </div>
+
+            <div class="map">
+
+            </div>
+        </div>
+
+        <script type="template" id="search-box">
+            <form name="search">
+                <input type="text" name="term">
+                <input type="submit" value="search">
+            </form>
+        </script>
+
+        <script type="template" id="business-item">
+            <%= name %> | Stars: <%= rating %>
+        </script>
+
+        <script type="template" id="map">
+            <div id="mapContainer"></div>
+        </script>
+        <script type="template" id="plot-item">
+            <div class="plot">plot</div>
+        </script>
+        <script data-main="scripts/main" src="/node_modules/requirejs/require.js"></script>
     </body>
 </html>

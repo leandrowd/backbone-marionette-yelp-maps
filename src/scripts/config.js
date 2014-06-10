@@ -9,7 +9,8 @@ require.config({
         underscore: '../node_modules/underscore/underscore',
         jquery: '../node_modules/jquery/dist/jquery',
         backbone: '../node_modules/backbone/backbone',
-        marionette: '../node_modules/backbone.marionette/lib/backbone.marionette'
+        marionette: '../node_modules/backbone.marionette/lib/backbone.marionette',
+        'google-maps': '../node_modules/google-maps/lib/Google'
     },
     shim: {
         backbone: {

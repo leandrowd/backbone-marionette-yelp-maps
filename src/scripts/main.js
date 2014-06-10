@@ -4,7 +4,20 @@
 
 'use strict';
 
-define(function (require) {
+define(['config', 'app', 'views/searchBox', 'views/businessList', 'views/map'], function (config, app, searchBoxView, businessListView, mapView) {
     require('config');
-    require('app').start();
+
+    app.addRegions({
+        searchBox: '.searchBox',
+        results: '.resultList',
+        map: '.map'
+    })
+
+    app.searchBox.show(new searchBoxView());
+    app.results.show(new businessListView());
+    app.map.show(new mapView());
+
+    app.start();
+
+    return app;
 });

@@ -1,32 +1,39 @@
 {
-  "name": "backbone-developer-test",
-  "version": "0.0.0",
-  "description": "Automatic Backbone Developer Test",
-  "main": "server.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "Kamil Ogórek",
-  "license": "MIT",
-  "dependencies": {},
-  "devDependencies": {
-    "backbone": "^1.1.2",
-    "backbone.marionette": "^1.8.7",
-    "connect-livereload": "^0.4.0",
-    "grunt": "^0.4.5",
-    "grunt-contrib-clean": "^0.5.0",
-    "grunt-contrib-connect": "^0.7.1",
-    "grunt-contrib-copy": "^0.5.0",
-    "grunt-contrib-htmlmin": "^0.3.0",
-    "grunt-contrib-jshint": "^0.10.0",
-    "grunt-contrib-sass": "^0.7.3",
-    "grunt-contrib-watch": "^0.6.1",
-    "grunt-requirejs": "^0.4.2",
-    "jquery": "^2.1.1",
-    "jshint-stylish": "^0.2.0",
-    "load-grunt-tasks": "^0.4.0",
-    "requirejs": "^2.1.14",
-    "time-grunt": "^0.3.2",
-    "underscore": "^1.6.0"
-  }
+    "name": "backbone-developer-test",
+    "version": "0.0.0",
+    "description": "Automatic Backbone Developer Test",
+    "main": "server.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "Kamil Ogórek",
+    "license": "MIT",
+    "dependencies": {
+        "express": "3.4.8",
+        "yelp": "^0.1.1"
+    },
+    "devDependencies": {
+        "backbone": "^1.1.2",
+        "backbone.marionette": "^1.8.7",
+        "connect-livereload": "^0.4.0",
+        "google-maps": "^2.0.0",
+        "grunt": "^0.4.5",
+        "grunt-contrib-clean": "^0.5.0",
+        "grunt-contrib-connect": "^0.7.1",
+        "grunt-contrib-copy": "^0.5.0",
+        "grunt-contrib-htmlmin": "^0.3.0",
+        "grunt-contrib-jshint": "^0.10.0",
+        "grunt-contrib-sass": "^0.7.3",
+        "grunt-contrib-watch": "^0.6.1",
+        "grunt-requirejs": "^0.4.2",
+        "jquery": "^2.1.1",
+        "jshint-stylish": "^0.2.0",
+        "load-grunt-tasks": "^0.4.0",
+        "requirejs": "^2.1.14",
+        "time-grunt": "^0.3.2",
+        "underscore": "^1.6.0"
+    },
+        "engines": {
+        "node": ">=0.8.0"
+    }
 }
