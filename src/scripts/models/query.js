@@ -1,15 +1,21 @@
 /**
- * Search Box View
+ * Query Model
  */
 
 'use strict';
 
-define(['app', 'backbone'], function(app, Backbone){
-    var SearchModel = Backbone.Model.extend({
+define(
+    [
+    'app',
+    'backbone'
+    ],
+
+function(app, Backbone){
+    var QueryModel = Backbone.Model.extend({
         defaults: {
             term: ''
         }
     })
 
-    return SearchModel;
+    return QueryModel;
 });

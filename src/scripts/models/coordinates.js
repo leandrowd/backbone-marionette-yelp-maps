@@ -1,10 +1,16 @@
 /**
- * Search Box View
+ * Coordinates Model
  */
 
 'use strict';
 
-define(['app', 'backbone'], function(app, Backbone){
+define(
+    [
+    'app',
+    'backbone'
+    ],
+
+function(app, Backbone){
     var CoordinatesModel = Backbone.Model.extend({
         urlRoot: 'http://maps.googleapis.com/maps/api/geocode/json',
         initialize: function(){
@@ -12,9 +18,6 @@ define(['app', 'backbone'], function(app, Backbone){
                 data: {
                     address: this.get('address'),
                     sensor: false
-                },
-                success: function(data, t){
-                    // console.log(data, t);
                 }
             });
         },

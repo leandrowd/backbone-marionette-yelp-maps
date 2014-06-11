@@ -1,13 +1,20 @@
 /**
- * Search Box View
+ * Business List View
  */
 
 'use strict';
 
-define(['app', 'marionette', 'views/businessItem', 'collections/businessList'], function(app, Marionette, businessItem, businessCollection){
+define(
+    [
+    'app',
+    'marionette',
+    'views/business',
+    'collections/businessList'
+    ],
+
+function(app, Marionette, businessItemView, businessCollection){
     var BusinessList = Marionette.CollectionView.extend({
-        itemView: businessItem,
-        collection: new businessCollection,
+        itemView: businessItemView,
         tagName: 'ul',
         initialize: function(){
             var self = this;

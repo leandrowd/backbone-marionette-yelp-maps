@@ -27,20 +27,27 @@
 
         <script type="template" id="search-box">
             <form name="search">
-                <input type="text" name="term">
+                <input type="text" name="term" placeholder="pizza / sushi / burguer">
                 <input type="submit" value="search">
             </form>
         </script>
 
         <script type="template" id="business-item">
-            <%= name %> | Stars: <%= rating %>
+            <div class="<%= selected ? 'selected' : '' %>">
+                <h3><%= name %>
+                    <small>
+                        <% _.times(parseInt(rating), function(category) { %> ★ <% }); %>
+                    </small>
+                </h3>
+                <p><%= address[0] %></p>
+            </div>
         </script>
 
         <script type="template" id="map">
             <div id="mapContainer"></div>
         </script>
         <script type="template" id="plot-item">
-            <div class="plot">plot</div>
+            <%= name %> | Stars: <%= rating %>
         </script>
         <script data-main="scripts/main" src="/node_modules/requirejs/require.js"></script>
     </body>

@@ -10,7 +10,9 @@
 }
 
 body {
-    background: #bada55;
+    background: #e5e5e5;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-weight: 300;
 }
 
 .wrapper {
@@ -26,6 +28,7 @@ body {
 .searchBox {
     padding: 10px;
     text-align: center;
+    height: 75px;
 
     input {
         border: 0;
@@ -40,6 +43,32 @@ body {
     input[type=submit] {
         background: #000;
         color: #fff;
+    }
+}
+
+.resultList {
+    overflow: auto;
+    height: calc(100vh - 75px);
+    font-size: 0.75em;
+
+    div {
+        padding: 5px 10px;
+
+        &:hover {
+            background: rgba(#fff, 0.5);
+        }
+    }
+
+    h3 {
+
+    }
+
+    small {
+        float: right;
+    }
+
+    .selected {
+        background: #fff;
     }
 }
 

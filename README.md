@@ -1,11 +1,31 @@
-```
-npm install
+### Marionette's Example APP
 
-grunt server:dev
+#### Yelp API + Google Maps API + Backbone + Marionette
 
-OR
+To run the client:
 
-grunt build
-grunt server:dist
-```
+`npm install`
 
+`grunt server:dev`
+
+To run the YELP Api
+
+`node app.js`
+
+Note: If you don't want to run the YELP api, go to `scrips/collections/businessList.js` and:
+
+- comment this line `url: 'http://localhost:3000/search',`
+- uncomment this line `url: 'scripts/fixtures/business.json',`
+
+Note 2: The yelp api key and the google maps api key will only work on `localhost`
+
+
+#### TODOs:
+
+- [ ] Responsive version
+- [ ] Use geolocation api
+- [ ] Create routes for search
+- [ ] Integrate YELP api server on grunt tasks
+
+ 
+ 

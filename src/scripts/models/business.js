@@ -1,24 +1,38 @@
 /**
- * Search Box View
+ * Business Model
  */
 
 'use strict';
 
-define(['app', 'underscore', 'backbone', 'models/coordinates'], function(app, _, Backbone, coordinatesModel){
+define(
+    [
+    'app',
+    'underscore',
+    'backbone',
+    'models/coordinates'
+    ],
+
+function(app, _, Backbone, coordinatesModel){
     var BusinessModel = Backbone.Model.extend({
-        initialize: function(){
-            this.on('add', this.addCoordinates);
-            // this.on('change:coordinates', function(e, d){
-            //     console.log(e, d, 'change location');
-            // })
+
+        defaults: {
+            //used to keep the item synced between the map and the result list
+            selected: false
         },
 
-        //retrieve the coordinates from google after add
+        initialize: function(){
+            this.on('add', this.addCoordinates);
+        },
+
+        // addCoordinates - retrieve the coordinates from maps api
         addCoordinates: function(){
             var location = this.get('location');
             var address = [location.address, location.state_code,location.postal_code].join(', ');
+
+            //add the nested model to the model so the view can listen to the changes
+            this.coordinatesModel = new coordinatesModel({address: address});
             this.set(_.extend(location, {
-                coordinates: new coordinatesModel({address: address}).attributes
+                coordinates: this.coordinatesModel.attributes
             }))
         }
 
